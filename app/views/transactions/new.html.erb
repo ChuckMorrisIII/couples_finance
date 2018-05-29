@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @transaction.errors.any? %>
+  <% @transaction.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Transaction</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_transaction" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for amount -->
+      <div class="form-group">
+        <label for="amount" class="control-label">
+          Amount
+        </label>
+
+        <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control" value="<%= @transaction.amount %>">
+      </div>
+
+      <!-- Label and input for trasaction_type -->
+      <div class="form-group">
+        <label for="trasaction_type" class="control-label">
+          Trasaction type
+        </label>
+
+        <input type="text" id="trasaction_type" name="trasaction_type" placeholder="Trasaction type" class="form-control" value="<%= @transaction.trasaction_type %>">
+      </div>
+
+      <!-- Label and input for category_id -->
+      <div class="form-group">
+        <label for="category_id" class="control-label">
+          Category
+        </label>
+
+        <input type="text" id="category_id" name="category_id" placeholder="Category" class="form-control" value="<%= @transaction.category_id %>">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @transaction.date %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @transaction.description %>">
+      </div>
+
+      <!-- Label and input for account_id -->
+      <div class="form-group">
+        <label for="account_id" class="control-label">
+          Account
+        </label>
+
+        <input type="text" id="account_id" name="account_id" placeholder="Account" class="form-control" value="<%= @transaction.account_id %>">
+      </div>
+
+      <!-- Label and input for tagging_id -->
+      <div class="form-group">
+        <label for="tagging_id" class="control-label">
+          Tagging
+        </label>
+
+        <input type="text" id="tagging_id" name="tagging_id" placeholder="Tagging" class="form-control" value="<%= @transaction.tagging_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Transaction
+      </button>
+      or
+      <a href="/transactions">Cancel</a>
+    </form>
+  </div>
+</div>
