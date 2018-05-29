@@ -26,3 +26,65 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many accounts -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Accounts
+      </li>
+
+      <% @user.accounts.each do |account| %>
+        <li class="list-group-item">
+          <a href="/accounts/<%= account.id %>">
+            <%= account.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/accounts/<%= account.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/accounts/<%= account.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_account/<%= account.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many joint_accounts -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Joint Accounts
+      </li>
+
+      <% @user.joint_accounts.each do |account| %>
+        <li class="list-group-item">
+          <a href="/accounts/<%= account.id %>">
+            <%= account.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/accounts/<%= account.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/accounts/<%= account.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_account/<%= account.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

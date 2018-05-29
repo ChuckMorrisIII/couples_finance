@@ -41,3 +41,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Transaction has many taggings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Taggings
+      </li>
+
+      <% @transaction.taggings.each do |tagging| %>
+        <li class="list-group-item">
+          <a href="/taggings/<%= tagging.id %>">
+            <%= tagging.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/taggings/<%= tagging.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/taggings/<%= tagging.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_tagging/<%= tagging.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Transaction has many tags -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Tags
+      </li>
+
+      <% @transaction.tags.each do |tag| %>
+        <li class="list-group-item">
+          <a href="/tags/<%= tag.id %>">
+            <%= tag.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/tags/<%= tag.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/tags/<%= tag.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_tag/<%= tag.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
