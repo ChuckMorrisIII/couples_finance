@@ -1,6 +1,8 @@
 class Transaction < ApplicationRecord
   # Direct associations
 
+  belongs_to :account
+
   has_many   :taggings,
              :dependent => :destroy
 

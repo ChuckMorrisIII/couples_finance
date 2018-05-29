@@ -1,6 +1,9 @@
 class Account < ApplicationRecord
   # Direct associations
 
+  has_many   :transactions,
+             :dependent => :destroy
+
   belongs_to :joint_owner,
              :required => false,
              :class_name => "User"
