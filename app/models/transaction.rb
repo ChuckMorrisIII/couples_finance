@@ -1,6 +1,9 @@
 class Transaction < ApplicationRecord
   # Direct associations
 
+  belongs_to :category,
+             :required => false
+
   belongs_to :account
 
   has_many   :taggings,

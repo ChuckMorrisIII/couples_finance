@@ -1,6 +1,8 @@
 class Category < ApplicationRecord
   # Direct associations
 
+  has_many   :transactions
+
   # Indirect associations
 
   # Validations
