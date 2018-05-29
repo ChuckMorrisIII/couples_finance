@@ -1,6 +1,10 @@
 class Account < ApplicationRecord
   # Direct associations
 
+  belongs_to :joint_owner,
+             :required => false,
+             :class_name => "User"
+
   belongs_to :owner,
              :class_name => "User",
              :counter_cache => true

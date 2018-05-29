@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :joint_accounts,
+             :class_name => "Account",
+             :foreign_key => "joint_owner_id",
+             :dependent => :nullify
+
   has_many   :accounts,
              :foreign_key => "owner_id",
              :dependent => :destroy
