@@ -60,7 +60,7 @@
           Joint owner
         </label>
 
-        <input type="text" id="joint_owner_id" name="joint_owner_id" placeholder="Joint owner" class="form-control" value="<%= @account.joint_owner_id %>">
+        <%= select_tag(:joint_owner_id, options_from_collection_for_select(User.all, :id, :email, @account.joint_owner_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
