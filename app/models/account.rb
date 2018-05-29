@@ -5,6 +5,8 @@ class Account < ApplicationRecord
 
   # Validations
 
+  validates :name, :presence => true
+
   validates :owner_id, :presence => true
 
 end
