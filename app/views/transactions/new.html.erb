@@ -69,7 +69,7 @@
           Account
         </label>
 
-        <input type="text" id="account_id" name="account_id" placeholder="Account" class="form-control" value="<%= @transaction.account_id %>">
+        <%= select_tag(:account_id, options_from_collection_for_select(Account.all, :id, :name, @transaction.account_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for tagging_id -->
