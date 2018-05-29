@@ -5,6 +5,8 @@ class Transaction < ApplicationRecord
 
   # Validations
 
+  validates :category_id, :presence => true
+
   validates :date, :presence => true
 
   validates :trasaction_type, :presence => true
