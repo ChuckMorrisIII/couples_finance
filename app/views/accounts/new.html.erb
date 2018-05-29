@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @account.errors.any? %>
+  <% @account.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Account</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_account" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @account.name %>">
+      </div>
+
+      <!-- Label and input for account_type -->
+      <div class="form-group">
+        <label for="account_type" class="control-label">
+          Account type
+        </label>
+
+        <input type="text" id="account_type" name="account_type" placeholder="Account type" class="form-control" value="<%= @account.account_type %>">
+      </div>
+
+      <!-- Label and input for owner_id -->
+      <div class="form-group">
+        <label for="owner_id" class="control-label">
+          Owner
+        </label>
+
+        <input type="text" id="owner_id" name="owner_id" placeholder="Owner" class="form-control" value="<%= @account.owner_id %>">
+      </div>
+
+      <!-- Label and input for account_subtype -->
+      <div class="form-group">
+        <label for="account_subtype" class="control-label">
+          Account subtype
+        </label>
+
+        <input type="text" id="account_subtype" name="account_subtype" placeholder="Account subtype" class="form-control" value="<%= @account.account_subtype %>">
+      </div>
+
+      <!-- Label and input for joint_owner_id -->
+      <div class="form-group">
+        <label for="joint_owner_id" class="control-label">
+          Joint owner
+        </label>
+
+        <input type="text" id="joint_owner_id" name="joint_owner_id" placeholder="Joint owner" class="form-control" value="<%= @account.joint_owner_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Account
+      </button>
+      or
+      <a href="/accounts">Cancel</a>
+    </form>
+  </div>
+</div>

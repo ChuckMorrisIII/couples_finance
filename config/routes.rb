@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Account resource:
+  # CREATE
+  get "/accounts/new", :controller => "accounts", :action => "new"
+  post "/create_account", :controller => "accounts", :action => "create"
+
+  # READ
+  get "/accounts", :controller => "accounts", :action => "index"
+  get "/accounts/:id", :controller => "accounts", :action => "show"
+
+  # UPDATE
+  get "/accounts/:id/edit", :controller => "accounts", :action => "edit"
+  post "/update_account/:id", :controller => "accounts", :action => "update"
+
+  # DELETE
+  get "/delete_account/:id", :controller => "accounts", :action => "destroy"
+  #------------------------------
+
   # Routes for the Transaction resource:
   # CREATE
   get "/transactions/new", :controller => "transactions", :action => "new"
