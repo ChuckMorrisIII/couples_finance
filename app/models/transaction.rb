@@ -5,6 +5,8 @@ class Transaction < ApplicationRecord
 
   # Validations
 
+  validates :account_id, :presence => true
+
   validates :amount, :presence => true
 
   validates :amount, :numericality => true
