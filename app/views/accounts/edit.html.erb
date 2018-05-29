@@ -36,14 +36,8 @@
         <input type="text" id="account_type" name="account_type" placeholder="Account type" class="form-control" value="<%= @account.account_type %>">
       </div>
 
-      <!-- Label and input for owner_id -->
-      <div class="form-group">
-        <label for="owner_id" class="control-label">
-          Owner
-        </label>
-
-        <%= select_tag(:owner_id, options_from_collection_for_select(User.all, :id, :email, @account.owner_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for account_subtype -->
       <div class="form-group">
