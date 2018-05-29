@@ -6,6 +6,10 @@ class Tag < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :tagged_transactions,
+             :through => :taggings,
+             :source => :tagged_transaction
+
   # Validations
 
   validates :name, :uniqueness => true

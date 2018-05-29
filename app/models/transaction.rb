@@ -11,6 +11,10 @@ class Transaction < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :tags,
+             :through => :taggings,
+             :source => :tag
+
   # Validations
 
   validates :account_id, :presence => true
