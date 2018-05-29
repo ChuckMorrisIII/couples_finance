@@ -16,6 +16,7 @@ class AccountsController < ApplicationController
   end
 
   def show
+    @transaction = Transaction.new
     @account = Account.find(params[:id])
 
     render("accounts/show.html.erb")

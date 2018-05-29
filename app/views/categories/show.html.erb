@@ -51,6 +51,74 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_transaction" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for amount -->
+      <div class="form-group">
+        <label for="amount" class="control-label">
+          Amount
+        </label>
+
+        <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for trasaction_type -->
+      <div class="form-group">
+        <label for="trasaction_type" class="control-label">
+          Trasaction type
+        </label>
+
+        <input type="text" id="trasaction_type" name="trasaction_type" placeholder="Trasaction type" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for category_id -->
+      <input type="hidden" name="category_id" value="<%= @category.id %>">
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for account_id -->
+      <div class="form-group">
+        <label for="account_id" class="control-label">
+          Account
+        </label>
+
+        <%= select_tag(:account_id, options_from_collection_for_select(Account.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for tagging_id -->
+      <div class="form-group">
+        <label for="tagging_id" class="control-label">
+          Tagging
+        </label>
+
+        <input type="text" id="tagging_id" name="tagging_id" placeholder="Tagging" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Transaction
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

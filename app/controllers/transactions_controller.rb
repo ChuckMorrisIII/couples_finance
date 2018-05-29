@@ -6,6 +6,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    @tagging = Tagging.new
     @transaction = Transaction.find(params[:id])
 
     render("transactions/show.html.erb")

@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @transaction = Transaction.new
     @category = Category.find(params[:id])
 
     render("categories/show.html.erb")
