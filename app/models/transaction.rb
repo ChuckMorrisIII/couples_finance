@@ -5,4 +5,6 @@ class Transaction < ApplicationRecord
 
   # Validations
 
+  validates :trasaction_type, :presence => true
+
 end
