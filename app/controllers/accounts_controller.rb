@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
   end
 
   def index
-    @accounts = Account.all
+    @accounts = current_user.accounts.page(params[:page]).per(10)
 
     render("accounts/index.html.erb")
   end
