@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-  before_action :current_user_must_be_account_owner, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_account_owner, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_account_owner
     account = Account.find(params[:id])
