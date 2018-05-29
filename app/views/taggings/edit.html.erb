@@ -33,7 +33,7 @@
           Transaction
         </label>
 
-        <input type="text" id="transaction_id" name="transaction_id" placeholder="Transaction" class="form-control" value="<%= @tagging.transaction_id %>">
+        <%= select_tag(:transaction_id, options_from_collection_for_select(Transaction.all, :id, :amount, @tagging.transaction_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
