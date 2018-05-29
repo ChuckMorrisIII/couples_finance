@@ -23,7 +23,7 @@
         <td><%= account.account_type %></td>
         <td><%= account.owner.email %></td>
         <td><%= account.account_subtype %></td>
-        <td><%= account.joint_owner_id %></td>
+        <td><%= account.joint_owner.email %></td>
         <td>
           <a href="/accounts/<%= account.id %>" class="btn btn-primary">Show</a>
           <a href="/accounts/<%= account.id %>/edit" class="btn btn-warning">Edit</a>
