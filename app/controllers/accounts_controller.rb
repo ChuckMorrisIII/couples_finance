@@ -10,7 +10,8 @@ class AccountsController < ApplicationController
   end
 
   def index
-    @accounts = current_user.accounts.page(params[:page]).per(10)
+    @q = current_user.joint_accounts.ransack(params[:q])
+    @accounts = @q.result(:distinct => true).includes(:owner, :joint_owner, :transactions).page(params[:page]).per(10)
 
     render("accounts/index.html.erb")
   end
