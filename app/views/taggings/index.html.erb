@@ -16,8 +16,20 @@
 
       <% @taggings.each do |tagging| %>
       <tr>
-        <td><%= tagging.tag.name %></td>
-        <td><%= tagging.tagged_transaction.amount %></td>
+        <td>
+          <% if tagging.tag.present? %>
+            <a href="/tags/<%= tagging.tag.id %>">
+              <%= tagging.tag.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if tagging.tagged_transaction.present? %>
+            <a href="/transactions/<%= tagging.tagged_transaction.id %>">
+              <%= tagging.tagged_transaction.amount %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/taggings/<%= tagging.id %>" class="btn btn-primary">Show</a>
           <a href="/taggings/<%= tagging.id %>/edit" class="btn btn-warning">Edit</a>

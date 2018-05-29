@@ -12,7 +12,13 @@
       <dd><%= @transaction.trasaction_type %></dd>
 
       <dt>Category</dt>
-      <dd><%= @transaction.category_id %></dd>
+      <dd>
+        <% if @transaction.category.present? %>
+          <a href="/categories/<%= @transaction.category_id %>">
+            <%= @transaction.category.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Date</dt>
       <dd><%= @transaction.date %></dd>
@@ -21,7 +27,13 @@
       <dd><%= @transaction.description %></dd>
 
       <dt>Account</dt>
-      <dd><%= @transaction.account_id %></dd>
+      <dd>
+        <% if @transaction.account.present? %>
+          <a href="/accounts/<%= @transaction.account_id %>">
+            <%= @transaction.account.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Tagging</dt>
       <dd><%= @transaction.tagging_id %></dd>

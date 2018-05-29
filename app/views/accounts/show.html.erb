@@ -12,13 +12,25 @@
       <dd><%= @account.account_type %></dd>
 
       <dt>Owner</dt>
-      <dd><%= @account.owner_id %></dd>
+      <dd>
+        <% if @account.owner.present? %>
+          <a href="/users/<%= @account.owner_id %>">
+            <%= @account.owner.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Account subtype</dt>
       <dd><%= @account.account_subtype %></dd>
 
       <dt>Joint owner</dt>
-      <dd><%= @account.joint_owner_id %></dd>
+      <dd>
+        <% if @account.joint_owner.present? %>
+          <a href="/users/<%= @account.joint_owner_id %>">
+            <%= @account.joint_owner.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

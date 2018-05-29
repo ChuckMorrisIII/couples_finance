@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Tag</dt>
-      <dd><%= @tagging.tag_id %></dd>
+      <dd>
+        <% if @tagging.tag.present? %>
+          <a href="/tags/<%= @tagging.tag_id %>">
+            <%= @tagging.tag.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Transaction</dt>
-      <dd><%= @tagging.transaction_id %></dd>
+      <dd>
+        <% if @tagging.tagged_transaction.present? %>
+          <a href="/transactions/<%= @tagging.transaction_id %>">
+            <%= @tagging.tagged_transaction.amount %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

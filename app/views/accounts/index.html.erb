@@ -21,9 +21,21 @@
       <tr>
         <td><%= account.name %></td>
         <td><%= account.account_type %></td>
-        <td><%= account.owner.email %></td>
+        <td>
+          <% if account.owner.present? %>
+            <a href="/users/<%= account.owner.id %>">
+              <%= account.owner.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= account.account_subtype %></td>
-        <td><%= account.joint_owner.email %></td>
+        <td>
+          <% if account.joint_owner.present? %>
+            <a href="/users/<%= account.joint_owner.id %>">
+              <%= account.joint_owner.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/accounts/<%= account.id %>" class="btn btn-primary">Show</a>
           
