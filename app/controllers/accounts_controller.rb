@@ -35,7 +35,6 @@ class AccountsController < ApplicationController
     @account.name = params[:name]
     @account.account_type = params[:account_type]
     @account.owner_id = params[:owner_id]
-    @account.account_subtype = params[:account_subtype]
     @account.joint_owner_id = params[:joint_owner_id]
 
     save_status = @account.save
@@ -66,7 +65,6 @@ class AccountsController < ApplicationController
     @account.name = params[:name]
     @account.account_type = params[:account_type]
     @account.owner_id = params[:owner_id]
-    @account.account_subtype = params[:account_subtype]
     @account.joint_owner_id = params[:joint_owner_id]
 
     save_status = @account.save
