@@ -23,7 +23,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
 
     @transaction.amount = params[:amount]
-    @transaction.trasaction_type = params[:trasaction_type]
+    @transaction.transaction_type = params[:transaction_type]
     @transaction.category_id = params[:category_id]
     @transaction.date = params[:date]
     @transaction.description = params[:description]
@@ -56,7 +56,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
 
     @transaction.amount = params[:amount]
-    @transaction.trasaction_type = params[:trasaction_type]
+    @transaction.transaction_type = params[:transaction_type]
     @transaction.category_id = params[:category_id]
     @transaction.date = params[:date]
     @transaction.description = params[:description]

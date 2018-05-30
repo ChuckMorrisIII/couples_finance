@@ -1,6 +1,6 @@
 ActiveAdmin.register Account do
 
- permit_params :name, :account_type, :owner_id, :account_subtype, :joint_owner_id
+ permit_params :name, :account_type, :owner_id, :joint_owner_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

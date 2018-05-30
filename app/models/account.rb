@@ -16,9 +16,9 @@ class Account < ApplicationRecord
 
   # Validations
 
-  validates :account_subtype, :presence => true
-
   validates :account_type, :presence => true
+
+  validates :account_type, :inclusion => { :in => [ 'credit', 'depository' ]  }
 
   validates :joint_owner_id, :uniqueness => { :scope => [:owner_id] }
 

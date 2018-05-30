@@ -27,6 +27,6 @@ class Transaction < ApplicationRecord
 
   validates :date, :presence => true
 
-  validates :trasaction_type, :presence => true
+  validates :transaction_type, :presence => true
 
 end
